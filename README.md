@@ -1,1 +1,1 @@
-# wankowicz_lab_management
+# Wankowicz Lab Docs & Management
