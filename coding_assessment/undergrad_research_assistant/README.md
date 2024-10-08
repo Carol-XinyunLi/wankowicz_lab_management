@@ -17,4 +17,5 @@ You goal is (without loading in biology or PDB specific packages!) to create a p
 Here are few resources about PDB files and RMSF:
 
 [PDB Files](https://www.umass.edu/microbio/rasmol/pdb.htm#:~:text=PDB%20files%20are%20plain%20text,several%20other%20types%20if%20present.)
+
 [RMSF](https://en.wikipedia.org/wiki/Root_mean_square_deviation_of_atomic_positions)
