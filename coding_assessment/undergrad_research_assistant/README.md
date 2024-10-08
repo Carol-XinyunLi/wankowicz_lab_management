@@ -1,5 +1,5 @@
-The goal of this assessment is to see where you are at in terms of coding. There is no pass/fail for this. I ask that you complete the assessment without accessing AI assisted tools (although we encourage it in the lab!).
-The main reason for this assessment is to give an idea of where your coding knowledge is so we can craft an appropriate project. Stop when you get to 2 hours and send it to me (wherever you get to)
+The goal of this assessment is to see where you are at in terms of coding. There is no pass/fail for this. I ask that you complete the assessment without accessing AI-assisted tools (although we encourage it in the lab!).
+The main reason for this assessment is to give an idea of where your coding knowledge is so we can craft an appropriate project. Stop when you get to 2 hours and send it to me (wherever you get to). 
 
 
 The goal of this assessement is to determine the Root Mean Squared Fluctuation (RSMF) of every residue over [>50 PDB structures](./PDBs/). The PDB structures are all of the same protein with the same numbering of amino acids. They have also already been aligned. 
