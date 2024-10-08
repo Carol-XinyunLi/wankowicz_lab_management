@@ -2,7 +2,7 @@ The goal of this assessment is to see where you are at in terms of coding. There
 The main reason for this assessment is to give an idea of where your coding knowledge is so we can craft an appropriate project. Stop when you get to 2 hours and send it to me (wherever you get to)
 
 
-The goal of this assessement is to determine the Root Mean Squared Fluctuation (RSMF) of every residue over [50 PDB structures](.). The PDB structures are all of the same protein with the same numbering of amino acids. They have also already been aligned. 
+The goal of this assessement is to determine the Root Mean Squared Fluctuation (RSMF) of every residue over [>50 PDB structures](./PDBs/). The PDB structures are all of the same protein with the same numbering of amino acids. They have also already been aligned. 
 
 
 
