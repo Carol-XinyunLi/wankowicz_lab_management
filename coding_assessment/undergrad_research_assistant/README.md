@@ -13,6 +13,7 @@ You goal is (without loading in biology or PDB specific packages!) to create a p
 3) For every residue calculate the RMSF and record it in some way
 4) Create a plot of the RMSF of every residue across the protein
 
+Packages such as pandas, numpy, glob, matplotlib, ect are allowed. 
 
 Here are few resources about PDB files and RMSF:
 
