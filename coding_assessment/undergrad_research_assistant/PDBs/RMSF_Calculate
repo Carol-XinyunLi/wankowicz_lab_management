@@ -1,0 +1,76 @@
+import numpy as np
+import glob
+import matplotlib.pyplot as plt
+
+
+def read_pdb(file_path):
+    """
+    Read PDB file and extract Cα atom coordinates for each residue.
+    """
+    residues = {}
+
+    with open(file_path, 'r') as pdb_file:
+        for line in pdb_file:
+            if line.startswith('ATOM'):
+                res_num = int(line[22:26].strip())
+                atom_name = line[12:16].strip() 
+                x = float(line[30:38].strip())   
+                y = float(line[38:46].strip())
+                z = float(line[46:54].strip())
+
+                if atom_name == 'CA':
+                    if res_num not in residues:
+                        residues[res_num] = []
+                    residues[res_num].append([x, y, z])
+    
+    return residues
+
+def compute_rmsf(all_residues):
+    """
+    Calculate the RMSF for each residue across multiple structures.
+    """
+    rmsf = {}
+
+    for res_num in all_residues[0]:
+        coords = np.array([all_residues[i][res_num] for i in range(len(all_residues))])
+        mean_coords = np.mean(coords, axis=0)
+        squared_diffs = np.sum((coords - mean_coords) ** 2, axis=1)
+        rmsf[res_num] = np.sqrt(np.mean(squared_diffs))
+    
+    return rmsf
+
+def plot_rmsf(rmsf):
+    """
+    Create a plot of RMSF values for each residue.
+    """
+    res_nums = sorted(rmsf.keys())
+    rmsf_values = []
+    for res_num in res_nums:
+        rmsf_values.append(rmsf[res_num])
+
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(res_nums, rmsf_values, marker='o', linestyle='--', color='g')
+    plt.xlabel('Residue Number')
+    plt.ylabel('RMSF (Å)')
+    plt.title('RMSF per Residue Across Protein')
+    plt.grid(True)
+    plt.show()
+
+def main(pdb_directory):
+    """
+    Main function to execute the workflow for RMSF calculation.
+    """
+    
+    pdb_file_list = glob.glob(f"{pdb_directory}/*.pdb")
+    
+    all_residues = []
+    for pdb_file in pdb_file_list:
+        residues = read_pdb(pdb_file)
+        all_residues.append(residues)
+    
+    rmsf = compute_rmsf(all_residues)
+    
+    plot_rmsf(rmsf)
+
+main('path_to_your_pdb_files')
